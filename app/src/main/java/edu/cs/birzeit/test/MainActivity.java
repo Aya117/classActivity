@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> listAdapter;
-    ArrayList <String> arr;
+    String [] ar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,10 +126,12 @@ public class MainActivity extends AppCompatActivity {
             // }
 //            EditText edtData = findViewById(R.id.edtData);
 //            edtData.setText(result);
-            arr.add(result);
+
+            ar = result.split(",");
+
             listAdapter = new ArrayAdapter<String>(MainActivity.this,
                     android.R.layout.simple_list_item_1,
-                    arr);
+                    ar);
 
             ListView listView = (ListView)findViewById(R.id.listed);
             listView.setAdapter(listAdapter);
