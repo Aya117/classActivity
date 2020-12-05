@@ -128,10 +128,14 @@ public class MainActivity extends AppCompatActivity {
 //            edtData.setText(result);
 
             ar = result.split(",");
+            ArrayList<String>arr=new ArrayList<>();
+            for (int i = 0; i <ar.length ; i++) {
+                arr.add(ar[i]);
+            }
 
             listAdapter = new ArrayAdapter<String>(MainActivity.this,
                     android.R.layout.simple_list_item_1,
-                    ar);
+                    arr);
 
             ListView listView = (ListView)findViewById(R.id.listed);
             listView.setAdapter(listAdapter);
